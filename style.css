@@ -16,6 +16,7 @@
 body{
     color: var(--dark);
     background: var(--white);
+    overflow: hidden;
 }
 .navigation{
     display: flex;
@@ -27,6 +28,7 @@ body{
     background: var(--white);
     transition: all 0.5s;
     position: fixed;
+    
 }
 .navigation .logo{
     color: var(--red);
@@ -88,13 +90,18 @@ body{
     margin-bottom: 1rem;
 }
 .home-text .text-h1{
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
     line-height: 4rem;
 }
 .home-text p{
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
+
+.paragrafo-medio{
+    display: none;
+}
+
 .home-btn{
     padding: 15px 45px;
     background: var(--red);
@@ -107,15 +114,27 @@ body{
     background: #fc4c35;
 }
 .home-img img{
-    width: 100%;
+    max-width: 51.5%;
+    min-width: 340px;
     margin-left: 37px;
 
 }
 
-@media (max-width:785px) {
-    .navigation{
+/* .home-img{
+    margin-top: 20px;
+    max-width: 51.5%;
+    min-width: 340px;
+} */
+
+
+
+
+
+@media (min-width: 590px) and (max-width:785px) {
+    .navigation {
         padding: 18px 20px;
     }
+
     .menu{
         display: block;
     }
@@ -146,24 +165,168 @@ body{
         margin: 16px 0;
     }
     /*main*/
+
     .home{
-        padding: 100px 2%;
+        padding: 80px 2%;
         flex-direction: column;
         text-align: center;
         overflow: hidden;
-        gap: 5rem;
+        gap: 0rem;
     }
+
+    
+    .home .text-h4{
+        font-size: 16.7px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    
+    .home .text-h1{
+        font-size: 2.0rem;
+        line-height: 3rem;
+    }
+    .home p.um{
+        font-size: 13px;
+        margin-bottom: 0px;
+        display: none;       /*  SUMI COM O PARAGRAFO  */
+        
+    }
+
+    .paragrafo-medio{
+        display: block;
+        margin-bottom: 0px;
+        font-size: 16px;
+        
+    }
+
+    .home-btn {
+        margin-top: 0px;
+        padding: 9px 45px;
+    }
+    .home-img{
+        margin-top: 20px;
+        max-width: 51.5%;
+        min-width: 340px;
+    }
+
+    .navigation .logo {
+        color: var(--red);
+        font-size: 1.2rem;
+        font-weight: 600;
+}
+
+    .quebrar-paragrafo-medio {
+        break-after: always;
+        content: "";
+        display: block;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+@media (max-width:590px) {
+    .navigation {
+        padding: 18px 20px;
+    }
+
+    .menu{
+        display: block;
+    }
+    .menu.ativo .bar:nth-child(1){
+        transform:  translateY(8px) rotate(45deg);
+    }
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu.ativo .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        background: var(--white);
+        gap: -10px;
+        transition: 0.3s;
+    }
+    .nav-menu.ativo{
+        right: 0;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    /*main*/
+
+    .home{
+        padding: 80px 2%;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+        gap: 0rem;
+    }
+
+    
     .home .text-h4{
         font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 0px;
     }
+    
     .home .text-h1{
-        font-size: 2.5rem;
+        font-size: 2.0rem;
         line-height: 3rem;
     }
     .home p{
-        font-size: 15px;
+        font-size: 11.5px;
+        margin-bottom: 31px;
+    }
+
+    .paragrafo-medio{
+        display: none;
+    }
+
+    .home-btn {
+        margin-top: 5px;
+        padding: 9px 45px;
     }
     .home-img{
-        width: 125%;
+        margin-top: 5px;
+        width: 70%;
     }
+
+    .navigation .logo {
+        color: var(--red);
+        font-size: 1.2rem;
+        font-weight: 600;
+}
+
+    .quebra-titulo {
+        break-after: always;
+        content: "" ;
+        display: block;
+    }
+
+    .quebrar-paragrafo {
+        break-after: always;
+        content: "" ;
+        display: block;
+        
+    }
+
+    
+
+
+
+    
+
 }
